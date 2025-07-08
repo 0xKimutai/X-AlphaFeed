@@ -38,8 +38,4 @@ jobs:
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/0xKimutai/X-AlphaFeed.git
           git add backend/tweets.json
           git commit -m "Update tweets" || echo "No changes to commit"
-      - name: Debug whoami
-        run: |
-          git config --list
-          git remote -v
           git push
