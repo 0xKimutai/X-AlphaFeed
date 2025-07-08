@@ -19,3 +19,7 @@ app.add_middleware(
 # Register API endpoints
 app.include_router(feed.router)
 app.include_router(search.router)
+
+@app.get("/")
+def root():
+    return {"message": "X-Alpha backend is running 🚀"}
