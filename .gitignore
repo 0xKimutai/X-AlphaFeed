@@ -5,12 +5,23 @@ __pycache__/
 *.pyd
 env/
 venv/
+*.sqlite3
 
-# Node.js
+# Node.js / Next.js
 node_modules/
 .next/
-.env
+out/
+.env.local
+.env.development
+.env.production
 
-# General
-.DS_Store
+# VSCode
+.vscode/
+
+# Logs
 *.log
+
+# OS
+.DS_Store
+Thumbs.db
+
