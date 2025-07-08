@@ -21,7 +21,7 @@ def scrape_bing_twitter_links():
     all_results = []
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)  # Set to True for silent scraping
+        browser = p.chromium.launch(headless=True)  # Set to True for silent scraping
         context = browser.new_context()
         page = context.new_page()
 
