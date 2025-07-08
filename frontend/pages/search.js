@@ -22,7 +22,7 @@ export default function SearchPage() {
 
   return (
     <div className="max-w-2xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-4">🔍 Search Results for “{query}”</h1>
+      <h1 className="text-2xl font-bold mb-4">🔍 Search Results for “{query}” in 𝕏-Alpha</h1>
       <SearchBar />
       {loading ? (
         <p>Searching...</p>

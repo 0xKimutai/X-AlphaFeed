@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className="max-w-2xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-4">📊 X-Alpha Feed</h1>
+      <h1 className="text-2xl font-bold mb-4">𝕏-Alpha Feed</h1>
       <SearchBar />
       {loading ? (
         <p>Loading tweets...</p> // Show this while waiting
