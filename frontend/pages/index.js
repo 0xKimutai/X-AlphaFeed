@@ -8,7 +8,7 @@ export default function Home() {
   const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
-    axios.get('http://https://x-alphafeed.onrender.com/')
+    axios.get('http://x-alphafeed.onrender.com/')
       .then(res => setTweets(res.data.data))
       .catch(err => console.error('Failed to fetch feed:', err));
   }, []);
