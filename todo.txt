@@ -1,0 +1,144 @@
+🧠 Project Idea (Full Description)
+
+>X-AlphaFeed is a web-based platform that automatically scans Twitter (X) for posts (tweets) that contain crypto or stock asset analysis, then aggregates and displays them in a searchable, scrollable newsfeed. Each entry contains:
+
+>A snippet or summary of the post,
+
+>A link to the original tweet,
+
+    -Metadata like username, timestamp, likes, and possibly sentiment (Bullish, Bearish, Neutral).
+
+    -Users can search for any asset using its symbol (e.g., $BTC, $AAPL, #Solana) and get a list of related tweet-based analyses if available.
+
+    -The tool aims to help traders, researchers, and investors quickly discover insights from active analysts, traders, and influencers without manually searching Twitter.
+
+✅ To-Do List (Full Tasks with Tools)
+
+1. Project Setup & Planning
+    -Define project goals and feature list.
+
+    -Set up GitHub repository.
+
+    -Create .env config template for API keys.
+
+    -Tools: GitHub, Notion/Trello
+
+2. Set Up Backend (FastAPI + PostgreSQL)
+    -Scaffold FastAPI project structure.
+
+    -Create models for Tweets and Assets.
+
+    -Connect PostgreSQL DB.
+
+    -Add Twitter API integration (using tweepy or twitter-api-v2).
+
+    -Schedule background job to fetch tweets every 10–15 minutes.
+
+    -Filter tweets by keywords/hashtags/cashtags.
+
+    -Clean, parse, and store tweet data (ID, author, URL, asset tags, text, likes).
+
+    -Add basic NLP sentiment analysis using TextBlob or VADER.
+
+3. Create API Routes
+    -/feed: latest tweets.
+
+    -/search?q=$BTC: search tweets by asset.
+
+    -/asset/:symbol: asset-specific feed.
+
+    -Tools: FastAPI routers, SQLAlchemy or Tortoise ORM
+
+4. Set Up Frontend (Next.js + TailwindCSS)
+ Scaffold Next.js app.
+
+    -Create UI pages:
+
+    -/ – Main Feed
+
+    -/search – Search Results
+
+    -/asset/:symbol – Individual Asset View
+
+    -Create components:
+
+    -Tweet Card
+
+    -Search Bar
+
+    -Filters / Load More
+
+    -Connect to backend using Axios or Fetch.
+
+5. Search Feature
+    -Build real-time search bar with suggestions.
+
+    -Display results dynamically.
+
+    -Show "No results found" if no tweets match.
+
+    -Tools: React hooks, PostgreSQL full-text search
+
+6. Deployment & Monitoring
+    -Deploy frontend to Vercel.
+
+    -Deploy backend to Render/Fly.io.
+
+    -Host database on Supabase or PostgreSQL managed service.
+
+    -Add logging and error monitoring.
+
+    -Tools: Vercel, Render, Supabase, Sentry
+
+7. (Optional) Watchlist / Auth
+    -Add user auth (Auth0/Firebase).
+
+    -Let users bookmark assets.
+
+    -Display personalized feed.
+
+    -Tools: Firebase, Supabase Auth
+
+>>>📁 Folder Structure (Full Stack)
+
+        x-alpha-feed/
+        ├── backend/
+        │   ├── app/
+        │   │   ├── api/                  # FastAPI routes
+        │   │   │   ├── v1/
+        │   │   │   │   ├── feed.py
+        │   │   │   │   ├── search.py
+        │   │   │   │   └── asset.py
+        │   │   ├── core/                 # Configs and settings
+        │   │   │   ├── config.py
+        │   │   │   └── scheduler.py
+        │   │   ├── models/               # DB models
+        │   │   │   └── tweet.py
+        │   │   ├── services/             # Twitter & NLP logic
+        │   │   │   ├── twitter_client.py
+        │   │   │   ├── sentiment.py
+        │   │   ├── main.py               # FastAPI app entry
+        │   ├── requirements.txt
+        │   └── .env
+        │
+        ├── frontend/
+        │   ├── public/
+        │   ├── src/
+        │   │   ├── components/
+        │   │   │   ├── TweetCard.jsx
+        │   │   │   ├── SearchBar.jsx
+        │   │   ├── pages/
+        │   │   │   ├── index.js
+        │   │   │   ├── search.js
+        │   │   │   └── asset/[symbol].js
+        │   │   ├── styles/
+        │   │   │   └── globals.css
+        │   │   ├── utils/
+        │   │   │   └── api.js
+        │   ├── tailwind.config.js
+        │   ├── package.json
+        │   └── .env.local
+        │
+        ├── .gitignore
+        ├── README.md
+        └── LICENSE
