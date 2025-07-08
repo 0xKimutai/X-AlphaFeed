@@ -12,7 +12,7 @@ export default function SearchPage() {
 
   useEffect(() => {
     if (query) {
-      axios.get(`http://127.0.0.1:8000/search?q=${encodeURIComponent(query)}`)
+      axios.get(`http://https://x-alphafeed.onrender.com/search?q=${encodeURIComponent(query)}`)
         .then(res => setResults(res.data.data))
         .catch(err => console.error('Search failed:', err));
     }
